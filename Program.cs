@@ -11,4 +11,6 @@ app.MapGet("/", () => "Hello World!");
 
 app.MapGet("/health", () => new { status = "Healthy" });
 
+app.MapGet("/test", () => $"MY_ENV={Environment.GetEnvironmentVariable("MY_ENV")}");
+
 app.Run();
